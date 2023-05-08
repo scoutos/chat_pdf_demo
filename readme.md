@@ -16,5 +16,5 @@ To follow along:
 5. Create your table
 5. `node embed.js`
 6. `npm run dev`
-7. chat awayxwx
+7. chat away
 
