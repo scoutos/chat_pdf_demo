@@ -1,6 +1,6 @@
 # PDF Chatbot
 
-We are building a platform to build generative ai apps @ http://otherwill.com , so you can sign up for beta access there!
+We are building a platform to build generative ai apps @ http://otherwill.com , so you can sign up for beta access there if you're interested.
 
 
 Join us in our discord @ https://discord.gg/JQGWGwVwNU
