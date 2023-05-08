@@ -1,0 +1,24 @@
+{
+  "name": "postgres-ml-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "langchain": "0.0.66",
+    "openai": "^3.2.1",
+    "openai-api": "^1.3.1",
+    "pdf-parse": "^1.1.1",
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
