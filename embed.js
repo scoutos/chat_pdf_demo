@@ -1,4 +1,4 @@
-const { PDFLoader } = require("langchain/document_loaders/fs/pdf");
+const { CSVLoader } = require("langchain/document_loaders/fs/csv")
 require("dotenv").config();
 const { Client } = require("pg");
 const client = new Client({
@@ -7,15 +7,22 @@ const client = new Client({
 
 client.connect();
 
-const pdfPath = "embeddings.pdf";
+
+const csvPath = "./courses_data.csv";
 const load = async () => {
-  const loader = new PDFLoader(pdfPath);
+
+  const loader = new CSVLoader(csvPath);
+
   const docs = await loader.load();
+
+
+
+
 
   let postRes;
   for (const doc of docs) {
     const query = `
-    INSERT INTO chat_pdf (content, metadata)
+    INSERT INTO chat_course_catalog (content, metadata)
     SELECT
       $1,
       $2
@@ -23,6 +30,7 @@ const load = async () => {
 
     postRes = await client.query(query, [doc.pageContent, doc.metadata]);
   }
+
   console.log(`succesfully inserted ${docs.length} page embeddings.`);
 };
 

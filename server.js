@@ -32,9 +32,9 @@ app.post("/chat/completions", async (req, res) => {
         }'
     )::vector AS embedding
 )
-SELECT content FROM chat_pdf
-ORDER BY chat_pdf.embedding <=> (SELECT embedding FROM query)
-LIMIT 3;
+SELECT content FROM chat_course_catalog
+ORDER BY chat_course_catalog.embedding <=> (SELECT embedding FROM query)
+LIMIT 30;
   `;
 
     const postRes = await client.query(query, [input]);
@@ -43,7 +43,7 @@ LIMIT 3;
 
     //
     const prompt = `
-    You are teacher who assists users with understanding a pdf. Answer the user's questions only using the context's opinion. If you are unsure of the answer, tell the user you dont know.
+    you answer a users questions about southern new hampshire's course catalog 
 
     context's opinion: """
     ${textRows.map(({ content }) => content)}
